@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import UserCard from "./UserCard";
-import PostCard from "./PostCard";
-import { getUsers, getPosts } from "./Services";
+import UserCard from "../UserCard";
+import PostCard from "../PostCard";
+import { getUsers, getPosts } from "../Services";
 
 function Exercise() {
   const [users, setUsers] = useState([]);

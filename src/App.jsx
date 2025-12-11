@@ -3,6 +3,7 @@ import SignInPage from "./Pages/SignIn.jsx";
 import SignUpPage from "./Pages/SignUp.jsx";
 import ErrorPage from "./Pages/error.jsx";
 import DashboardPage from "./Pages/dashboard.jsx";
+import BalancePage from "./Pages/balance.jsx"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -36,6 +37,10 @@ function App() {
     {
       path: "/register",
       element: <SignUpPage/>,
+    },
+    {
+      path: "/balance",
+      element: <BalancePage/>,
     },
   ]);
 

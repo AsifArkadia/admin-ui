@@ -2,13 +2,14 @@ import "./App.css";
 import SignInPage from "./Pages/SignIn.jsx";
 import SignUpPage from "./Pages/SignUp.jsx";
 import ErrorPage from "./Pages/error.jsx";
+import DashboardPage from "./Pages/dashboard.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
 function App() {
   const myRouter = createBrowserRouter([
-    {
+    /*{
       path: "/",
       element: (				
         <div className="flex justify-center items-center min-h-screen">
@@ -21,6 +22,11 @@ function App() {
           </Link>
         </div>
         ),
+      errorElement: <ErrorPage/>,
+    },*/
+    {
+      path: "/",
+      element: <DashboardPage/>,
       errorElement: <ErrorPage/>,
     },
     {

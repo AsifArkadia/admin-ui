@@ -63,15 +63,17 @@ function CardGoal(props) {
 
   return (
     <>
-      <Card 
-        title="Goals" 				
-        desc={
-          !data ? (
-            <div className="flex flex-col justify-center items-center h-full text-primary">
-              <CircularProgress color="inherit" size={50} />
-              Loading Data
-            </div>
-          ) : (
+      <Card
+      title="Goals"
+      desc={
+        !data || Object.keys(data).length === 0 ? (
+          <div className="flex flex-col justify-center items-center h-full min-h-[200px] text-primary">
+            <CircularProgress color="inherit" size={50} />
+            <span className="mt-2 text-sm text-gray-500">
+              Loading Goal Data...
+            </span>
+          </div>
+        ) : (
             chartData
           )
         } 

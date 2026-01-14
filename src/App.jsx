@@ -3,14 +3,16 @@ import SignInPage from "./Pages/SignIn.jsx";
 import SignUpPage from "./Pages/SignUp.jsx";
 import ErrorPage from "./Pages/error.jsx";
 import DashboardPage from "./Pages/dashboard.jsx";
-import BalancePage from "./Pages/balance.jsx"
-import { createBrowserRouter, 
-  Navigate, 
-  RouterProvider 
+import BalancePage from "./Pages/balance.jsx";
+import ExpensesPage from "./Pages/expenses.jsx";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
 } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext.jsx";
-
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -57,10 +59,30 @@ function App() {
         </RequireAuth>
       ),
     },
+    {
+      path: "/expenses",
+      element: (
+        <RequireAuth>
+          <ExpensesPage />
+        </RequireAuth>
+      ),
+    },
   ]);
 
   return (
     <>
+      {/* 🔔 TOAST GLOBAL */}
+      <Toaster
+        position="bottom-left"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            fontSize: "14px",
+          },
+        }}
+      />
+
+      {/* ROUTER */}
       <RouterProvider router={myRouter} />
     </>
   );
